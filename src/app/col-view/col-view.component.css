@@ -1,0 +1,10 @@
+.frame {
+  width: 400px;
+
+  border: 2px solid green;
+  border-radius: 10px;
+}
+
+.btn-inner {
+  height: 40px;
+}
