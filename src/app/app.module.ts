@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { ColViewComponent } from './col-view/col-view.component';
 import { MaterialModule } from './material-module';
 import { RowViewComponent } from './row-view/row-view.component';
+import { FileViewComponent } from './file-view/file-view.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 @NgModule({
   imports:      [
@@ -18,7 +20,9 @@ import { RowViewComponent } from './row-view/row-view.component';
   declarations: [
      AppComponent,
      ColViewComponent,
-     RowViewComponent
+     RowViewComponent,
+     FileViewComponent,
+     UploadFileComponent
     ],
   bootstrap:    [ AppComponent ]
 })
