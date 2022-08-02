@@ -2,6 +2,43 @@
   <mat-label>Dateiname</mat-label>
   <input matInput>            
 </mat-form-field>
+
+<mat-form-field class="w-100" appearance="fill">
+  <mat-label>Dokumententyp</mat-label>
+  <mat-select [(value)]="selectedDocType">
+    <mat-option>None</mat-option>
+    <mat-option value="option1">Sonstiges</mat-option>
+    <mat-option value="option1">Kalkulation</mat-option>
+    <mat-option value="option1">Kalkulation Sommer</mat-option>
+    <mat-option value="option1">Kalkulation Winter</mat-option>
+    <mat-option value="option2">Vertrag</mat-option>
+    <mat-option value="option3">Vertrag Sommer</mat-option>
+    <mat-option value="option3">Vertrag Winter</mat-option>
+  </mat-select>
+</mat-form-field>
+
+<form class="example-form">
+  <mat-form-field class="w-100" appearance="fill">
+    <mat-label>Dokumententyp</mat-label>
+    <input type="text" matInput [formControl]="docTypeControl" [matAutocomplete]="autoDocType">
+    <mat-autocomplete #autoDocType="matAutocomplete">
+      <mat-option *ngFor="let option of filteredDocTypes | async" [value]="option">
+        {{option}}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>
+
+<mat-form-field appearance="fill">
+  <mat-label>Gültig von - bis</mat-label>
+  <mat-date-range-input [rangePicker]="picker">
+    <input matStartDate placeholder="Start date">
+    <input matEndDate placeholder="End date">
+  </mat-date-range-input>
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-date-range-picker #picker></mat-date-range-picker>
+</mat-form-field>
+
 <mat-form-field class="w-100" appearance="fill">
   <mat-label>Bemerkung</mat-label>
   <input matInput>            
