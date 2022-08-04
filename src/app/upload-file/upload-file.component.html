@@ -1,3 +1,23 @@
+<!-- <div class="container-fluid mt-3" appDnd (fileDropped)="onFileDropped($event)"> -->
+<div class="container-fluid mt-3 mb-3">
+  <div class="row justify-content-center">
+    <div class="col-4">
+      <button class="centered align-items-center w-100 border border-dark rounded-3 pt-3 pb-3" color="basic">
+        <div class="d-block">
+          <i class="fa-thin fa-cloud-arrow-up fa-3x"></i>
+        </div>
+        <div class="d-block mt-3">
+          <button mat-raised-button color="primary">Hinzufügen</button>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<input type="file" #fileInput class="d-none" multiple />
+
+<h6 class="text-center m-2">Originalname</h6>
+
 <mat-form-field class="w-100" appearance="fill">
   <mat-label>Dateiname</mat-label>
   <input matInput>            

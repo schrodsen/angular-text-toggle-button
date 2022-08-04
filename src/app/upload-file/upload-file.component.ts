@@ -12,7 +12,9 @@ import { map, startWith } from 'rxjs/operators';
 export class UploadFileComponent implements OnInit {
   
   selectedDocType: string;
-  options: string[] = [
+
+  docTypeControl = new FormControl('');
+  docTypeItems: string[] = [
     'Sonstiges',
     'Kalkulation',
     'Kalkulation Sommer',
@@ -21,23 +23,20 @@ export class UploadFileComponent implements OnInit {
     'Vertrag Sommer',
     'Vertrag Winter' 
   ]
-
-  docTypeControl = new FormControl('');
-  docTypeItems: string[];
   filteredDocTypes: Observable<string[]>;
 
   ngOnInit() {
-    this.setTravelTags();
+    this.setDocTypes();
   }
 
-  private setTravelTags() {
+  private setDocTypes() {
     this.filteredDocTypes = this.docTypeControl.valueChanges.pipe(
       startWith(''),
-      map(name => (name ? this._filterTravelTags(name) : this.docTypeItems.slice())),
+      map(name => (name ? this._filterDocTypes(name) : this.docTypeItems.slice())),
     )
   }
 
-  private _filterTravelTags(value: string): string[] {
+  private _filterDocTypes(value: string): string[] {
     const filterValue = value.toLowerCase();
 
     return this.docTypeItems.filter(option => option.toLowerCase().includes(filterValue));

@@ -1,7 +1,6 @@
 <mat-sidenav-container class="example-container">
 
   <mat-sidenav-content>
-    <p><button mat-button (click)="sidenav.toggle()">sidenav.toggle()</button></p>
 
     <mat-expansion-panel>
 
@@ -127,7 +126,7 @@
 
   </mat-sidenav-content>
 
-  <mat-sidenav #sidenav mode="over" position="end" [(opened)]="opened" style="width:600px">
+  <mat-sidenav #sidenav mode="over" position="end" fixedInViewport="true" [(opened)]="opened" style="width:600px">
     <upload-file></upload-file>
   </mat-sidenav>
 </mat-sidenav-container>
