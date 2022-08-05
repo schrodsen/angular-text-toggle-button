@@ -9,6 +9,8 @@ import { MaterialModule } from './material-module';
 import { RowViewComponent } from './row-view/row-view.component';
 import { FileViewComponent } from './file-view/file-view.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
+import { ImageSliderComponent } from './image-slider/image-slider.component';
+
 
 @NgModule({
   imports:      [
@@ -23,7 +25,8 @@ import { UploadFileComponent } from './upload-file/upload-file.component';
      ColViewComponent,
      RowViewComponent,
      FileViewComponent,
-     UploadFileComponent
+     UploadFileComponent,
+     ImageSliderComponent,
     ],
   bootstrap:    [ AppComponent ]
 })
