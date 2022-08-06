@@ -10,7 +10,7 @@ export class ImageSliderDirective {
 
   @HostListener('click')
   onClick() {
-    var activeOption = document.getElementsByClassName("active");
+    var activeOption = document.getElementsByClassName("option active");
     if (activeOption.length > 0)
       activeOption[0].classList.remove("active");
 

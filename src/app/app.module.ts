@@ -11,6 +11,7 @@ import { FileViewComponent } from './file-view/file-view.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
 import { ImageSliderDirective } from './image-slider/image-slider.directive';
+import { StateIconDirective } from './image-slider/state-icon.directive';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { ImageSliderDirective } from './image-slider/image-slider.directive';
     UploadFileComponent,
     ImageSliderComponent,
     ImageSliderDirective,
+    StateIconDirective,
   ],
   bootstrap: [AppComponent],
 })
