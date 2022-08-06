@@ -23,7 +23,7 @@
   .options {
     min-width: 520px;
   }
-  .options .option: nth-child(5) {
+  .options .option:nth-child(5) {
     display: none;
   }
 }
@@ -32,7 +32,7 @@
   .options {
     min-width: 440px;
   }
-  .options .option: nth-child(4) {
+  .options .option:nth-child(4) {
     display: none;
   }
 }
@@ -41,7 +41,7 @@
   .options {
     min-width: 360px;
   }
-  .options .option: nth-child(3) {
+  .options .option:nth-child(3) {
     display: none;
   }
 }
@@ -50,7 +50,7 @@
   .options {
     min-width: 280px;
   }
-  .options .option: nth-child(2) {
+  .options .option:nth-child(2) {
     display: none;
   }
 }
@@ -60,59 +60,39 @@
   overflow: hidden;
   min-width: 60px;
   margin: 10px;
-  background: var (--optionBackground, var (--defaultBackground, whitesmoke));
   background-size: auto 120%;
   background-position: center;
   cursor: pointer;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.options .option:nth-child(1) {
-  --defaultBackground: green;
-}
-
-.options .option:nth-child(2) {
-  --defaultBackground: red;
-}
-
-.options .option:nth-child(3) {
-  --defaultBackground: yellow;
-}
-
-.options .option:nth-child(4) {
-  --defaultBackground: brown;
-}
-
-.options .option:nth-child(5) {
-  --defaultBackground: blue;
-}
-
-.options .option .active {
+.options .option.active {
   flex-grow: 10000;
   transform: scale(1);
   max-width: 600px;
   margin: 0;
-  border-radius: 40px;
+  border-radius: 20px;
   background-size: auto 100%;
 }
 
-.options .option .active .shadow {
-  box-shadow: inset 0 -120px 120px 120px black, inset 0 -120px 120px -100px black;
+.options .option.active .shadow {
+  box-shadow: inset 0 -120px 120px 120px black,
+    inset 0 -120px 120px -100px black;
 }
 
-.options .option .active .label {
+.options .option.active .label {
   bottom: 20px;
   left: 20px;
 }
 
-.options .option .active .label .info > div {
+.options .option.active .label .info > div {
   left: 0px;
   opacity: 1;
 }
 
 .options .option:not(.active) {
   flex-grow: 1;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .options .option:not(.active) .shadow {
@@ -120,7 +100,7 @@
   box-shadow: inset 0 -120px 0 -120px black, inset 0 -120px 0 -100px black;
 }
 
-.options .option:not(.active) .shadow {
+.options .option:not(.active) .label {
   bottom: 10px;
   left: 10px;
 }
@@ -130,7 +110,7 @@
   opacity: 0;
 }
 
-.optiosn .option .shadow {
+.options .option .shadow {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -139,35 +119,46 @@
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.optiosn .option .label {
+.options .option .label {
+  display: flex;
+  flex-direction: row;
   position: absolute;
   right: 0;
   height: 40px;
   transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
 }
 
-.optiosn .option .label .icon {
+.options .option .label .info {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  height: 40px;
-  width: 40px;
-  border-radius: 100%;
-  background-color: white;
-  color: var(--defaultBackground);
+  margin-left: 10px;
+  color: white;
+  white-space: pre;
 }
 
 .options .option .label .info > div {
   position: relative;
-  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);  
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out;
 }
 
 .options .option .label .info .main {
-  font-weight: bolder;
+  font-weight: bold;
   font-size: 1.2rem;
 }
 
 .options .option .label .info .sub {
   transition-delay: 0.1s;
+}
+
+.options .option .label .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  max-width: 40px;
+  min-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: white;
 }

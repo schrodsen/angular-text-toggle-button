@@ -10,24 +10,25 @@ import { RowViewComponent } from './row-view/row-view.component';
 import { FileViewComponent } from './file-view/file-view.component';
 import { UploadFileComponent } from './upload-file/upload-file.component';
 import { ImageSliderComponent } from './image-slider/image-slider.component';
-
+import { ImageSliderDirective } from './image-slider/image-slider.directive';
 
 @NgModule({
-  imports:      [
-     BrowserModule,
-     BrowserAnimationsModule, 
-     FormsModule,
-     ReactiveFormsModule,
-     MaterialModule 
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule,
+  ],
   declarations: [
-     AppComponent,
-     ColViewComponent,
-     RowViewComponent,
-     FileViewComponent,
-     UploadFileComponent,
-     ImageSliderComponent,
-    ],
-  bootstrap:    [ AppComponent ]
+    AppComponent,
+    ColViewComponent,
+    RowViewComponent,
+    FileViewComponent,
+    UploadFileComponent,
+    ImageSliderComponent,
+    ImageSliderDirective,
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
