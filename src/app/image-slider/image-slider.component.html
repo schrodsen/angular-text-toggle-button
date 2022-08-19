@@ -2,101 +2,20 @@
   <div class="options" >
 
     <div imageSlider *ngFor="let image of images; first as isFirst; let idx = index;"
-      [ngClass]="{ 'active': isFirst, 'semi-active': idx === 1 }"
+      [ngClass]="{ 'active': isFirst }"
       class="option"
       style="background-image: url({{image.url}});"
     >
-      <div class="shadow"></div>
       <div class="label">
-        <div stateIcon class="icon" style="z-index: 1000">
+        <div stateIcon class="icon">
           <i class="fa-solid fa-circle"></i>
         </div>
         <div class="info">
           <div class="main">{{image.title}}</div>
-          <div class="sub">B2</div>
+          <div class="sub">{{image.shortDescription}}</div>
         </div>
       </div>
     </div>
 
-  <!-- <div class="options">
-    <div imageSlider
-      class="option active"
-      style="background-image: url(https://cdn.reisenaktuell.com/images/2309880_78d42e6d8d6c7a6688b6d35d45a4a4aa-957x550-nocrop.jpg);"
-    >
-      <div class="shadow"></div>
-      <div class="label">
-        <div stateIcon class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="info">
-          <div class="main">Schwimmbad</div>
-          <div class="sub">Hotel</div>
-        </div>
-      </div>
-    </div>
-
-    <div imageSlider
-      class="option"
-      style="background-image: url(https://cdn.reisenaktuell.com/images/2309880_78d42e6d8d6c7a6688b6d35d45a4a4aa-957x550-nocrop.jpg);"
-    >
-      <div class="shadow"></div>
-      <div class="label">
-        <div stateIcon class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="info">
-          <div class="main">A3</div>
-          <div class="sub">B3</div>
-        </div>
-      </div>
-    </div>
-
-    <div imageSlider
-      class="option"
-      style="background-image: url(https://cdn.reisenaktuell.com/images/2309880_78d42e6d8d6c7a6688b6d35d45a4a4aa-957x550-nocrop.jpg);"
-    >
-      <div class="shadow"></div>
-      <div class="label">
-        <div stateIcon class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="info">
-          <div class="main">A3</div>
-          <div class="sub">B3</div>
-        </div>
-      </div>
-    </div>
-
-    <div imageSlider
-      class="option"
-      style="background-image: url(https://cdn.reisenaktuell.com/images/2309880_78d42e6d8d6c7a6688b6d35d45a4a4aa-957x550-nocrop.jpg);"
-    >
-      <div class="shadow"></div>
-      <div class="label">
-        <div stateIcon class="icon">
-          <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="info">
-          <div class="main">A3</div>
-          <div class="sub">B3</div>
-        </div>
-      </div>
-    </div>
-
-    <div imageSlider
-      class="option"
-      style="background-image: url(https://cdn.reisenaktuell.com/images/2309880_78d42e6d8d6c7a6688b6d35d45a4a4aa-957x550-nocrop.jpg);"
-    >
-      <div class="shadow"></div>
-      <div class="label">
-        <div stateIcon class="icon">
-        <i class="fa-solid fa-circle"></i>
-        </div>
-        <div class="info">
-          <div class="main">A3</div>
-          <div class="sub">B3</div>
-        </div>
-      </div>
-    </div> -->
   </div>
 </div>
